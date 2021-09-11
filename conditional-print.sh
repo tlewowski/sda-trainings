@@ -7,11 +7,16 @@ if [ $# != 3 ]; then
 fi
 
 # If first is equal to "list" then list the directory from second argument
-if [ "$1" = "list" ]; then
-  ls -lah $2
-# If first is equal to "print" then print the second argument
-elif [ "$1" = "print" ]; then
-  echo $2
+case "$1" in
+  "list") ls -lah $2;;
+  "print") echo $2;;
+esac
+
+
+if [ $# != 3 ]; then
+  echo 3
+elif [ $# > 1 ]; then
+  echo 1
 fi
 
 # Unconditionally print concatenation of all three arguments
