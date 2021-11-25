@@ -3,11 +3,15 @@ pipeline {
 
     stages {
         stage("Build") {
-            echo "Hello!"
-        }
+            steps {
+                echo "Hello!"
+            }
+       }
 
         stage("World") {
-            echo "World!"
+            steps {
+                echo "World!
+            }
         }
     }
 
